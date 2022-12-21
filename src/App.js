@@ -1,34 +1,41 @@
-import { useEffect, useState } from 'react';
-import { apiKey } from './api/config';
 import ImageCard from './components/ImageCard';
 import Input from './components/Input';
 import NavButtons from './components/NavButtons';
 import axios from "axios";
 import React from "react";
 import "./index.css"
-export default function App() {
-  const [input, setInput] = useState('')
-  const [images, setImages] = useState([]);
-  const baseURL = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${input}&format=json&nojsoncallback=1`;
+import {Link,Route, Routes, useEffect, useState } from 'react';
+import { apiKey } from './api/config';
+import ImageContextProvider, { ImageContext } from './context/ImageContext';
+import Header from './components/Header';
+// import {Link, Route, Routes, useParams } from 'react-router-dom';
 
-  useEffect(() => {
-    infoImg()
-    async function infoImg() {
-      await axios.get(baseURL).then((response) => {
-        setImages(response.data.photos.photo);
-      });
-    }
-  }, [baseURL]);
+export default function App() {
+
+  //   function ImagesInformationPage () { return(<h1>Images informations</h1>)} 
+  //   function Home () {
+  // const {input} = useParams
+  //     return(
+  //       <div>
+  //         <h1>Home</h1>
+  //         {input}
+  //       </div>
+
+  //     )
+  //   } 
 
   return (
-    <div className='principalInformation'>
-      <h1>SnapShot</h1>
-      <Input input={input} setInput={setInput} />
-      <NavButtons setInput={setInput} />
-      <h3>{input} Pictures</h3>
-      <div className="imageCards">
-      <ImageCard images={images} setImages={setImages} />
+    <ImageContextProvider>
+      <div className='principalInformation'>
+        <h1>SnapShot</h1>
+        <Input />
+        <NavButtons />
+        <Header />
+        <div className="imageCards">
+          <ImageCard />
+        </div>
       </div>
-    </div>
+    </ImageContextProvider>
+
   );
 }
