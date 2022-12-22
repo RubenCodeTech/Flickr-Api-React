@@ -1,3 +1,7 @@
+* {
+  text-decoration: none;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -7,10 +11,13 @@ body {
 
 h1 {
   text-decoration: none;
-  color: black;
   font-family: Lobster;
   font-size: 50px;
   margin-top: 0px;
+}
+
+.tittle {
+  color: rgb(0, 0, 0);
 }
 
 .inputImages {
@@ -29,12 +36,14 @@ h3 {
   font-size: 30px;
   margin-bottom: 40px;
 }
-.nav{
-height: 80px;
-display: flex;
-align-items: center;
-justify-content: center;
+
+.nav {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .navButtons {
   text-decoration: none;
   font-family: 'Arial', sans-serif;
@@ -43,7 +52,7 @@ justify-content: center;
   margin: 14px;
   width: 80px;
   height: 25px;
-  padding: 5px 10px;
+  padding: 10px 25px;
   border-radius: 3px;
   cursor: pointer;
   border-style: solid;
@@ -54,7 +63,8 @@ justify-content: center;
   align-items: center;
   height: 10px;
 }
-.navButtons:hover{
+
+.navButtons:hover {
   transform: translateY(-3px);
   transform: scale(1.02);
   box-shadow: 0px 6px 5px 0px rgb(176, 176, 176);
@@ -71,10 +81,12 @@ justify-content: center;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 20px;
 }
-.imageBox{
+
+.imageBox {
   overflow: hidden;
   box-shadow: 3px 5px 5px 5px rgb(176, 176, 176);
 }
+
 .images {
   float: left;
   width: 200px;
@@ -86,4 +98,30 @@ justify-content: center;
 .images:hover {
 
   transform: scale(1.15);
+}
+
+.about-us-link {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  color: rgb(255, 255, 255);
+  background-image: linear-gradient(45deg,#071b35, rgb(158, 158, 158)) ;
+  border-radius: 4px;
+  border-style: none;
+transition-duration: 1s;  
+}
+.about-us-link:hover {
+
+  color: rgb(255, 255, 255);
+  background-image: linear-gradient(45deg, rgb(158, 158, 158),#071b35);
+}
+
+.about-us-text {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(50px, 1fr));
+  gap: 100px;
+  margin: 100px 300px;
+  text-align: justify;
 }

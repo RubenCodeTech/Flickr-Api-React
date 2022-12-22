@@ -1,6 +1,6 @@
 // import { useState } from "react"
 import { useContext } from "react"
-import { NavLink } from "react-router-dom"
+// import { NavLink } from "react-router-dom"
 import { ImageContext } from "../context/ImageContext"
 function NavButtons() {
     const {setInput} = useContext(ImageContext)
@@ -9,10 +9,10 @@ function NavButtons() {
       }
     return (
         <nav className="nav">
-            <NavLink to={'/Mountain'} className='navButtons' onClick={buttons}>Mountain</NavLink>
-            <NavLink to={'/Birds'}  className='navButtons' onClick={buttons}>Birds</NavLink>
-            <NavLink to={'/Food'}  className='navButtons' onClick={buttons}>Food</NavLink>
-            <NavLink to={'/Beaches'}  className='navButtons' onClick={buttons}>Beaches</NavLink>
+            <button  className='navButtons' onClick={buttons} value={'pollita'}>Mountain</button>
+            <button   className='navButtons' onClick={buttons}>Birds</button>
+            <button   className='navButtons' onClick={buttons}>Food</button>
+            <button   className='navButtons' onClick={buttons}>Beaches</button>
         </nav>
     )
 }

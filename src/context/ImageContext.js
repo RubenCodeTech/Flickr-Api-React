@@ -12,20 +12,17 @@ function ImageContextProvider({ children }) {
 
     useEffect(() => {
         if (input !== '') {
-
             async function infoImg() {
                 await axios.get(baseURL).then((response) => {
                     setImages(response.data.photos.photo);
-                });
+                })
             }
             infoImg()
         }
-
     }, [input, baseURL]);
 
-
     return (
-        <ImageContext.Provider value={{input, setInput, images, setImages}}>
+        <ImageContext.Provider value={{ input, setInput, images, setImages }}>
             {children}
         </ImageContext.Provider>
     )
